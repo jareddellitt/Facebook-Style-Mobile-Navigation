@@ -7,68 +7,29 @@ body {
 ul {
 	padding: 0;
 	margin: 0;
+	list-style: none;
 }
 
-#content {
-	position: absolute;
-	top: 0px;
-	bottom: 0px;
-	left: -200px;
-	right: 0px;
-	overflow-x: hidden;
-	-webkit-transition: all .2s ease-in-out;
-	-moz-transition: all .2s ease-in-out;
-	-o-transition: all .2s ease-in-out;
-	-ms-transition: all .2s ease-in-out;
-	transition: all .2s ease-in-out;	
-	height: 2000px;	
-}
-
-#content.menu-visible {
-	/*left: 0px;*/
-	-moz-transform: translateX(200px);
- 	-webkit-transform: translateX(200px);	
-}
-
-.no-csstransitions #content.menu-visible {
-	left: 0px;	
-}
-
-#nav {
-	background: #2d2d2d;
-	-webkit-box-shadow: -5px -5px 15px rgba(0,0,0,.8) inset;
-	-moz-box-shadow: -5px -5px 15px rgba(0,0,0,.8) inset;
-	box-shadow: -5px -5px 15px rgba(0,0,0,.8) inset;
-
-	width: 200px;
-	float: left;
-	height: 100%;
-}
-
-#main {
-	margin-left: 200px;
-}
-
-#header .green {
+#header .head {
 	height: 40px;
-	background: #13542A;
-	-webkit-transform: translateZ(0);
-	background: -moz-linear-gradient(left, rgba(19, 84, 42, 1) 0%, rgba(42, 128, 59, 1) 25%, rgba(42, 128, 59, 1) 75%, rgba(19, 84, 42, 1) 100%);
-	background: -webkit-gradient(linear, left top, right top, color-stop(0%,rgba(19, 84, 42, 1)), color-stop(25%,rgba(42, 128, 59, 1)), color-stop(75%,rgba(42, 128, 59, 1)), color-stop(100%,rgba(19, 84, 42, 1)));
-	background: -webkit-linear-gradient(left, rgba(19, 84, 42, 1) 0%,rgba(42, 128, 59, 1) 25%,rgba(42, 128, 59, 1) 75%,rgba(19, 84, 42, 1) 100%);
-	background: -o-linear-gradient(left, rgba(19, 84, 42, 1) 0%,rgba(42, 128, 59, 1) 25%,rgba(42, 128, 59, 1) 75%,rgba(19, 84, 42, 1) 100%);
-	background: -ms-linear-gradient(left, rgba(19, 84, 42, 1) 0%,rgba(42, 128, 59, 1) 25%,rgba(42, 128, 59, 1) 75%,rgba(19, 84, 42, 1) 100%);
-	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#13542a', endColorstr='#13542a',GradientType=1 );
-	background: linear-gradient(left, rgba(19, 84, 42, 1) 0%,rgba(42, 128, 59, 1) 25%,rgba(42, 128, 59, 1) 75%,rgba(19, 84, 42, 1) 100%);	
+	background: #fa6305; /* Old browsers */
+	background: -moz-linear-gradient(left, #fa6305 0%, #f9b78e 50%, #fa6305 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, right top, color-stop(0%,#fa6305), color-stop(50%,#f9b78e), color-stop(100%,#fa6305)); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(left, #fa6305 0%,#f9b78e 50%,#fa6305 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(left, #fa6305 0%,#f9b78e 50%,#fa6305 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(left, #fa6305 0%,#f9b78e 50%,#fa6305 100%); /* IE10+ */
+	background: linear-gradient(left, #fa6305 0%,#f9b78e 50%,#fa6305 100%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fa6305', endColorstr='#fa6305',GradientType=1 ); /* IE6-9 */
 	position: relative;
 }
 
 #header h1 {
 	text-align: center;
 	margin: 0;
-	font-size: 1em;
+	font-size: 1.2em;
 	padding: 10px 0;
 	color: #FFF;
+	text-shadow: 0 0 2px #000;
 }
 
 #header #activator {
@@ -79,6 +40,11 @@ ul {
 	position: absolute;
 	left: 0px;
 	top: 0px;
+	background: url('/img/menu.png') no-repeat center;
+}
+
+#nav {
+	background: #2d2d2d;
 }
 
 #nav li {
@@ -91,4 +57,53 @@ ul {
 	padding: 11px 10px;
 	display: block;
 	text-decoration: none;
+	font-weight: bold;
+}
+
+#feed h2 {
+	font-size: 1em;
+	margin-top: 0;
+}
+
+#feed li {
+	padding: 10px;
+	border-bottom: 1px solid #CCC;
+}
+
+#feed p {
+	margin: 0;
+}
+
+.js #main {
+	margin-left: 200px;
+}
+
+.js #nav {
+	-webkit-box-shadow: -5px -5px 15px rgba(0,0,0,.8) inset;
+	-moz-box-shadow: -5px -5px 15px rgba(0,0,0,.8) inset;
+	box-shadow: -5px -5px 15px rgba(0,0,0,.8) inset;
+	width: 200px;
+	float: left;
+	height: 100%;	
+}
+
+.js #content {
+	position: absolute;
+	left: -200px;
+	right: 0px;
+	-webkit-transition: all .2s ease-in-out;
+	-moz-transition: all .2s ease-in-out;
+	-o-transition: all .2s ease-in-out;
+	-ms-transition: all .2s ease-in-out;
+	transition: all .2s ease-in-out;		
+	-webkit-transform: translateZ(0);	
+}
+
+.js #content.menu-visible {
+	-moz-transform: translateX(200px);
+ 	-webkit-transform: translateX(200px);	
+}
+
+.js .no-csstransitions #content.menu-visible {
+	left: 0px;	
 }
