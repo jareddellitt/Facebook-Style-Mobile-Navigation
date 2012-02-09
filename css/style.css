@@ -1,0 +1,94 @@
+body {
+	margin: 0;
+	font-family: Helvetica, sans-serif;
+	overflow-x: hidden;
+}
+
+ul {
+	padding: 0;
+	margin: 0;
+}
+
+#content {
+	position: absolute;
+	top: 0px;
+	bottom: 0px;
+	left: -200px;
+	right: 0px;
+	overflow-x: hidden;
+	-webkit-transition: all .2s ease-in-out;
+	-moz-transition: all .2s ease-in-out;
+	-o-transition: all .2s ease-in-out;
+	-ms-transition: all .2s ease-in-out;
+	transition: all .2s ease-in-out;	
+	height: 2000px;	
+}
+
+#content.menu-visible {
+	/*left: 0px;*/
+	-moz-transform: translateX(200px);
+ 	-webkit-transform: translateX(200px);	
+}
+
+.no-csstransitions #content.menu-visible {
+	left: 0px;	
+}
+
+#nav {
+	background: #2d2d2d;
+	-webkit-box-shadow: -5px -5px 15px rgba(0,0,0,.8) inset;
+	-moz-box-shadow: -5px -5px 15px rgba(0,0,0,.8) inset;
+	box-shadow: -5px -5px 15px rgba(0,0,0,.8) inset;
+
+	width: 200px;
+	float: left;
+	height: 100%;
+}
+
+#main {
+	margin-left: 200px;
+}
+
+#header .green {
+	height: 40px;
+	background: #13542A;
+	-webkit-transform: translateZ(0);
+	background: -moz-linear-gradient(left, rgba(19, 84, 42, 1) 0%, rgba(42, 128, 59, 1) 25%, rgba(42, 128, 59, 1) 75%, rgba(19, 84, 42, 1) 100%);
+	background: -webkit-gradient(linear, left top, right top, color-stop(0%,rgba(19, 84, 42, 1)), color-stop(25%,rgba(42, 128, 59, 1)), color-stop(75%,rgba(42, 128, 59, 1)), color-stop(100%,rgba(19, 84, 42, 1)));
+	background: -webkit-linear-gradient(left, rgba(19, 84, 42, 1) 0%,rgba(42, 128, 59, 1) 25%,rgba(42, 128, 59, 1) 75%,rgba(19, 84, 42, 1) 100%);
+	background: -o-linear-gradient(left, rgba(19, 84, 42, 1) 0%,rgba(42, 128, 59, 1) 25%,rgba(42, 128, 59, 1) 75%,rgba(19, 84, 42, 1) 100%);
+	background: -ms-linear-gradient(left, rgba(19, 84, 42, 1) 0%,rgba(42, 128, 59, 1) 25%,rgba(42, 128, 59, 1) 75%,rgba(19, 84, 42, 1) 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#13542a', endColorstr='#13542a',GradientType=1 );
+	background: linear-gradient(left, rgba(19, 84, 42, 1) 0%,rgba(42, 128, 59, 1) 25%,rgba(42, 128, 59, 1) 75%,rgba(19, 84, 42, 1) 100%);	
+	position: relative;
+}
+
+#header h1 {
+	text-align: center;
+	margin: 0;
+	font-size: 1em;
+	padding: 10px 0;
+	color: #FFF;
+}
+
+#header #activator {
+	display: inline-block;
+	width: 40px;
+	height: 100%;
+	border-right: 1px solid #EFEFEF;
+	position: absolute;
+	left: 0px;
+	top: 0px;
+}
+
+#nav li {
+	border-bottom: 1px solid #CCC;
+}
+
+#nav li a {
+	list-style: none;
+	color: #fff;
+	padding: 11px 10px;
+	display: block;
+	text-decoration: none;
+}
