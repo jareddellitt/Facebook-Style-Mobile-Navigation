@@ -18,6 +18,9 @@ ul {
 #content {
 	width: 100%;
 	height: 100%;
+}
+
+#content.nav-showing {
 	overflow: hidden;
 }
 
@@ -100,12 +103,28 @@ ul {
 	margin: 0;
 }
 
-#content.nav-showing #nav {
+.no-csstransforms #content.nav-showing #nav {
 	left: 0;
 }
 
-#content.nav-showing #main {
+.no-csstransforms #content.nav-showing #main {
 	left: 200px;
+}
+
+.csstransforms #content.nav-showing #nav {
+  -webkit-transform: translate(0px);
+     -moz-transform: translate(0px);
+      -ms-transform: translate(0px);
+       -o-transform: translate(0px);
+          transform: translate(0px);
+}
+
+.csstransforms #content.nav-showing #main {
+  -webkit-transform: translate(200px);
+     -moz-transform: translate(200px);
+      -ms-transform: translate(200px);
+       -o-transform: translate(200px);
+          transform: translate(200px);
 }
 
 .js #main {
@@ -133,8 +152,19 @@ ul {
 	-webkit-transform: translateZ(0);
 	position: absolute;
 	min-height: 100%;
-	overflow: hidden; 
-	left: -200px;			
+	overflow: hidden;
+}
+
+.js.no-csstransforms #nav {
+	left: -200px;
+}
+
+.js.csstransforms #nav {
+  -webkit-transform: translate(-200px);
+     -moz-transform: translate(-200px);
+      -ms-transform: translate(-200px);
+       -o-transform: translate(-200px);
+          transform: translate(-200px);
 }
 
 .js #content {
