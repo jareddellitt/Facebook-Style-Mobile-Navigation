@@ -17,13 +17,13 @@ ul {
 
 #header .head {
 	height: 40px;
-	background: -moz-linear-gradient(top,#fa6305 0,#f9b78e 100%);
-	background: -webkit-gradient(linear,left top,left bottom,color-stop(0%,#fa6305),color-stop(100%,#f9b78e));
-	background: -webkit-linear-gradient(top,#fa6305 0,#f9b78e 100%);
-	background: -o-linear-gradient(top,#fa6305 0,#f9b78e 100%);
-	background: -ms-linear-gradient(top,#fa6305 0,#f9b78e 100%);
-	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#fa6305',endColorstr='#f9b78e',GradientType=0);
-	background: linear-gradient(top,#fa6305 0,#f9b78e 100%);
+	background: -moz-linear-gradient(top,#f9b78e 0,#fa6305 100%);
+	background: -webkit-gradient(linear,left top,left bottom,color-stop(0%,#f9b78e),color-stop(100%,#fa6305));
+	background: -webkit-linear-gradient(top,#f9b78e 0,#fa6305 100%);
+	background: -o-linear-gradient(top,#f9b78e 0,#fa6305 100%);
+	background: -ms-linear-gradient(top,#f9b78e 0,#fa6305 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#f9b78e',endColorstr='#fa6305',GradientType=0);
+	background: linear-gradient(top,#f9b78e 0,#fa6305 100%);		
 	position: relative;
 }
 
@@ -33,7 +33,7 @@ ul {
 	font-size: 1.2em;
 	padding: 10px 0;
 	color: #FFF;
-	text-shadow: 1 1 1px #000;
+	text-shadow: 1px 1px 1px #000;
 }
 
 #header #activator {
@@ -44,7 +44,23 @@ ul {
 	position: absolute;
 	left: 0px;
 	top: 0px;
+}
+
+#activator .icon {
 	background: url('../img/menu.png') no-repeat center;
+	width: 100%;
+	height: 100%;
+}
+
+
+#header #activator:active {
+	background: -moz-linear-gradient(top,#fa6305 0,#f9b78e 100%);
+	background: -webkit-gradient(linear,left top,left bottom,color-stop(0%,#fa6305),color-stop(100%,#f9b78e));
+	background: -webkit-linear-gradient(top,#fa6305 0,#f9b78e 100%);
+	background: -o-linear-gradient(top,#fa6305 0,#f9b78e 100%);
+	background: -ms-linear-gradient(top,#fa6305 0,#f9b78e 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#fa6305',endColorstr='#f9b78e',GradientType=0);
+	background: linear-gradient(top,#fa6305 0,#f9b78e 100%);
 }
 
 #nav {
