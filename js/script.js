@@ -1,16 +1,12 @@
-(function (doc, $) {
-	var $content = $('#content'),
-		$doc = $(doc);
-
-	function toggle(e) {
-		e.preventDefault();
-		e.stopPropagation();
-
-		$content.toggleClass('nav-showing');
-	}
+(function ($) {
+	var $content = $('#content');
 
 	$('#nav').prependTo($content);
 
-	$('#activator').bind('click', toggle);
+	$('#activator').on('click', function (e) {
+		e.preventDefault();
 
-}(document, jQuery));
+		$content.toggleClass('nav-showing');
+	});
+
+}(jQuery));
