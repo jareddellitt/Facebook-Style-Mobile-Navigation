@@ -10,16 +10,20 @@ ul {
 	list-style: none;
 }
 
+#content {
+	width: 100%;
+	overflow: hidden;
+}
+
 #header .head {
 	height: 40px;
-	background: #fa6305;
-	background: -moz-linear-gradient(left, #fa6305 0%, #f9b78e 50%, #fa6305 100%);
-	background: -webkit-gradient(linear, left top, right top, color-stop(0%,#fa6305), color-stop(50%,#f9b78e), color-stop(100%,#fa6305));
-	background: -webkit-linear-gradient(left, #fa6305 0%,#f9b78e 50%,#fa6305 100%);
-	background: -o-linear-gradient(left, #fa6305 0%,#f9b78e 50%,#fa6305 100%);
-	background: -ms-linear-gradient(left, #fa6305 0%,#f9b78e 50%,#fa6305 100%);
-	background: linear-gradient(left, #fa6305 0%,#f9b78e 50%,#fa6305 100%);
-	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fa6305', endColorstr='#fa6305',GradientType=1 );
+	background: -moz-linear-gradient(top,#fa6305 0,#f9b78e 100%);
+	background: -webkit-gradient(linear,left top,left bottom,color-stop(0%,#fa6305),color-stop(100%,#f9b78e));
+	background: -webkit-linear-gradient(top,#fa6305 0,#f9b78e 100%);
+	background: -o-linear-gradient(top,#fa6305 0,#f9b78e 100%);
+	background: -ms-linear-gradient(top,#fa6305 0,#f9b78e 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#fa6305',endColorstr='#f9b78e',GradientType=0);
+	background: linear-gradient(top,#fa6305 0,#f9b78e 100%);
 	position: relative;
 }
 
@@ -29,7 +33,7 @@ ul {
 	font-size: 1.2em;
 	padding: 10px 0;
 	color: #FFF;
-	text-shadow: 0 0 2px #000;
+	text-shadow: 1 1 1px #000;
 }
 
 #header #activator {
@@ -74,8 +78,23 @@ ul {
 	margin: 0;
 }
 
+#content.nav-showing #nav {
+	left: 0;
+}
+
+#content.nav-showing #main {
+	left: 200px;
+}
+
 .js #main {
-	margin-left: 200px;
+	position: relative;
+	overflow: hidden;
+	-webkit-transition: all .2s ease-out;
+	-moz-transition: all .2s ease-out;
+	-o-transition: all .2s ease-out;
+	-ms-transition: all .2s ease-out;
+	transition: all .2s ease-out;		
+	-webkit-transform: translateZ(0);		
 }
 
 .js #nav {
@@ -83,27 +102,19 @@ ul {
 	-moz-box-shadow: -5px -5px 15px rgba(0,0,0,.8) inset;
 	box-shadow: -5px -5px 15px rgba(0,0,0,.8) inset;
 	width: 200px;
-	float: left;
 	height: 100%;	
+	-webkit-transition: all .2s ease-out;
+	-moz-transition: all .2s ease-out;
+	-o-transition: all .2s ease-out;
+	-ms-transition: all .2s ease-out;
+	transition: all .2s ease-out;		
+	-webkit-transform: translateZ(0);
+	position: absolute;
+	min-height: 100%;
+	overflow: hidden; 
+	left: -200px;			
 }
 
 .js #content {
-	position: absolute;
-	left: -200px;
-	right: 0px;
-	-webkit-transition: all .2s ease-in-out;
-	-moz-transition: all .2s ease-in-out;
-	-o-transition: all .2s ease-in-out;
-	-ms-transition: all .2s ease-in-out;
-	transition: all .2s ease-in-out;		
-	-webkit-transform: translateZ(0);	
-}
-
-.js #content.menu-visible {
-	-moz-transform: translateX(200px);
- 	-webkit-transform: translateX(200px);	
-}
-
-.js .no-csstransitions #content.menu-visible {
-	left: 0px;	
+	position: relative;
 }

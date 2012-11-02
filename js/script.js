@@ -6,13 +6,11 @@
 		e.preventDefault();
 		e.stopPropagation();
 
-		$content.toggleClass('menu-visible');
+		$content.toggleClass('nav-showing');
 	}
 
-	$('#nav').prependTo($content).css({
-		height: $doc.height()
-	});
+	$('#nav').prependTo($content);
 
-	$('#activator').bind('touchstart, click', toggle);
+	$('#activator').bind('click', toggle);
 
 }(document, jQuery));
