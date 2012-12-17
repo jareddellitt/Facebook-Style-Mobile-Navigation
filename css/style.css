@@ -116,6 +116,8 @@ ul {
 
 .no-csstransforms #content.nav-showing #nav {
 	left: 0;
+	overflow-y: scroll;
+	-webkit-overflow-scrolling: touch;	
 }
 
 .no-csstransforms #content.nav-showing #main {
@@ -123,6 +125,8 @@ ul {
 }
 
 .csstransforms #content.nav-showing #nav {
+	overflow-y: scroll;
+	-webkit-overflow-scrolling: touch;	
   -webkit-transform: translate(0px);
      -moz-transform: translate(0px);
       -ms-transform: translate(0px);
@@ -162,8 +166,7 @@ ul {
 	-webkit-transform: translateZ(0);
 	position: absolute;
 	min-height: 100%;
-	overflow-y: scroll;
-	-webkit-overflow-scrolling: touch;
+	overflow: hidden;
 }
 
 .js.no-csstransforms #nav {
