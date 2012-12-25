@@ -1,13 +1,22 @@
 (function ($) {
-	var $content = $('#content');
+    var $html = $('html'),
+        $body = $('body'),
+        $main = $('#main'),
+        $nav = $('#nav');
 
-	$('#nav').prependTo($content);
+	$nav.prependTo($('#content'));
 
-	$('#activator').on('click tap', function (e) {
+	$('#activator').on(Modernizr.touch ? 'touchend' : 'click', function (e) {
 		e.preventDefault();
         e.stopPropagation();
-
-		$content.toggleClass('nav-showing');
+		
+        $main.toggleClass('slid-right');
+        $nav.toggleClass('scroll');
 	});
+
+    $main.on('webkitTransitionEnd transitionend oTransitionEnd', function (e) {
+        $html.toggleClass('no-scrolling');
+        $body.toggleClass('no-scrolling');
+    });
 
 }($));
