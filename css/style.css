@@ -119,7 +119,7 @@ ul {
           transform: translate(250px);
 }
 
-.js #main {
+#main {
 	height: 100%;
 	background: #FFF;
 	overflow: hidden;
@@ -130,23 +130,29 @@ ul {
 	-o-transition: all .2s ease-out;
 	-ms-transition: all .2s ease-out;
 	transition: all .2s ease-out;		
+
 	-webkit-transform: translateZ(0);
 	-webkit-backface-visibility: hidden;
 	-moz-backface-visibility: hidden;
 	-ms-backface-visibility: hidden;
 }
 
-.js #nav {
+#nav {
+	display: none;	
 	width: 100%;
 	height: 100%;	
 	position: absolute;
-	top: 0px;
-	left: 0px;
+	top: 0;
+	left: 0;
 	min-height: 100%;
-	overflow: hidden;		
+	overflow: hidden;	
 }
 
-.js #nav.scroll {
+#nav.visible {
+	display: block;	
+}
+
+#nav.scroll {
 	overflow-y: scroll;
 	-webkit-overflow-scrolling: touch;
 }
