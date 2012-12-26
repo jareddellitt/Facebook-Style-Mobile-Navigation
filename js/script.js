@@ -12,16 +12,16 @@
         navMooved = true;
     }
 
-	$('#activator').on(Modernizr.touch ? 'touchend' : 'click', function (e) {
-		e.preventDefault();
+    $('#activator').on(Modernizr.touch ? 'touchend' : 'click', function (e) {
+        e.preventDefault();
         e.stopPropagation();
-		
+
         if (!navMooved) {
             moveNav();
         }
 
         $main.toggleClass('slid-right');
-	});
+    });
 
     $main.on('webkitTransitionEnd transitionend oTransitionEnd', function (e) {
         $html.toggleClass('no-scrolling');
