@@ -114,7 +114,7 @@ ul.unstyled {
 	margin: 0;
 }
 
-.csstransforms .slid-right .main-content, .csstransforms .slid-right .app-header {
+.csstransforms .nav-showing .main-content, .csstransforms .nav-showing .app-header {
   -webkit-transform: translate(250px);
      -moz-transform: translate(250px);
       -ms-transform: translate(250px);

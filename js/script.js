@@ -1,8 +1,9 @@
-(function ($) {
+(function ($, doc) {
     var $body = $('body'),
         $wrapper = $('#wrapper'),
         $main = $('#main'),
         $nav = $('#nav'),
+        visible = false,
         winHeight = window.outerHeight,
         navMooved = false;
 
@@ -19,10 +20,10 @@
             moveNav();
         }
 
-        $body.toggleClass('slid-right');
+        $body.toggleClass('nav-showing');
     });
 
-    $(document).on('.slid-right #main', Modernizr.touch ? 'touchstart' : 'mousedown', function (e) {
+    $(doc).on('.slid-right #main', Modernizr.touch ? 'touchstart' : 'mousedown', function (e) {
         e.preventDefault();
         e.stopPropagation();
     });
@@ -30,6 +31,12 @@
     $main.on('webkitTransitionEnd transitionend oTransitionEnd', function (e) {
         $body.toggleClass('no-scrolling');
         $nav.toggleClass('scroll');
+
+        visible = !visible;
+
+        if (!visible) {
+            $nav[0].scrollTop = 0;
+        }
     });
 
     if ($wrapper.height() < winHeight) {
@@ -38,4 +45,4 @@
 
     window.scrollTo('1px');
 
-}($));
+}($, document));
