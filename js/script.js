@@ -1,6 +1,6 @@
 (function ($) {
     var $body = $('body'),
-        $content = $('#content'),
+        $wrapper = $('#wrapper'),
         $main = $('#main'),
         $nav = $('#nav'),
         winHeight = window.outerHeight,
@@ -22,7 +22,6 @@
         $body.toggleClass('slid-right');
     });
 
-
     $(document).on('.slid-right #main', Modernizr.touch ? 'touchstart' : 'mousedown', function (e) {
         e.preventDefault();
         e.stopPropagation();
@@ -33,8 +32,8 @@
         $nav.toggleClass('scroll');
     });
 
-    if ($content.height() < winHeight) {
-        $content.height(winHeight);
+    if ($wrapper.height() < winHeight) {
+        $wrapper.height(winHeight);
     }
 
     window.scrollTo('1px');
