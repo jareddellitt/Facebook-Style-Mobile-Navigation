@@ -1,10 +1,9 @@
 (function ($) {
-    var $html = $('html'),
-        $body = $('body'),
+    var $body = $('body'),
         $content = $('#content'),
         $main = $('#main'),
         $nav = $('#nav'),
-        winHeight = $(window).height(),
+        winHeight = window.outerHeight,
         navMooved = false;
 
     function moveNav() {
@@ -20,11 +19,16 @@
             moveNav();
         }
 
-        $main.toggleClass('slid-right');
+        $body.toggleClass('slid-right');
+    });
+
+
+    $(document).on('.slid-right #main', Modernizr.touch ? 'touchstart' : 'mousedown', function (e) {
+        e.preventDefault();
+        e.stopPropagation();
     });
 
     $main.on('webkitTransitionEnd transitionend oTransitionEnd', function (e) {
-        $html.toggleClass('no-scrolling');
         $body.toggleClass('no-scrolling');
         $nav.toggleClass('scroll');
     });
@@ -32,5 +36,7 @@
     if ($content.height() < winHeight) {
         $content.height(winHeight);
     }
+
+    window.scrollTo('1px');
 
 }($));
