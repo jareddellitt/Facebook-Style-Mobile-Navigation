@@ -12,38 +12,12 @@
         $nav.prependTo($body).addClass('visible');
     }
 
-    // function open() {
-    //     $main.addClass('animate');
-    //     $header.addClass('animate');
-    //     $body.addClass('nav-showing');
-    //     $body.addClass('no-scrolling');
-    //     $nav.addClass('scroll');
-
-    //     visible = true;        
-    // }
-
-    // function close() {
-    //     $main.removeClass('animate');
-    //     $header.removeClass('animate');
-    //     $body.removeClass('nav-showing');
-    //     $body.removeClass('no-scrolling');
-    //     $nav.removeClass('scroll');        
-        
-    //     visible = false;
-
-    //     if (!visible) {
-    //         $nav[0].scrollTop = 0;
-    //     }
-    // }
-
     function preventDefault(e) {
         e.preventDefault();
         e.stopPropagation();
     }
 
     function doneMoving(e) {
-        console.log('got here');
-
         $body.toggleClass('no-scrolling');
         $nav.toggleClass('scroll');
 
